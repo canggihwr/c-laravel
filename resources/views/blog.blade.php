@@ -12,7 +12,8 @@
           
       
       <article class="blog-post">
-        <h2 class="blog-post-title">{{ $datas["title"] }}</h2>
+        
+        <h2 class="blog-post-title"><a href="{{ $datas["slug"] }}">{{ $datas["title"] }}</a></h2>
         <p class="blog-post-meta">June 6, 2022 by <a href="#">{{ $datas["author"] }}</a></p>
 
         <p>{{ $datas["post"] }}</p>
