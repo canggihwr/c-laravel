@@ -36,6 +36,16 @@
                 </div>
             @endif
 
+            Post::create([
+                'title' => 'third UP',
+                'slug' => 'third-up',
+                'excerpt' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam corporis porro eaque exercitationem eum sunt eveniet, eius accusantium, omnis in ea, totam dignissimos amet eos odit natus maiores explicabo consectetur delectus.',
+                'body' => '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam corporis porro eaque exercitationem eum sunt eveniet, eius accusantium, omnis in ea, totam dignissimos amet eos odit natus maiores explicabo consectetur delectus.</p><p> Molestias sit repellendus deleniti laudantium iusto. Ullam voluptas modi aperiam animi suscipit nobis quod vero fuga quasi accusamus tenetur, consequatur porro quibusdam architecto reiciendis praesentium illum odit? Quisquam sapiente hic iure sunt quis illo minima ab aliquid quasi aliquam esse vel ullam, placeat nostrum delectus harum. Illo odio qui dolores adipisci quaerat. </p> <p>Ipsa repellat rerum quia sint labore, similique laborum voluptates quaerat veniam ducimus dignissimos, atque et nobis pariatur eveniet voluptatem officiis unde, porro delectus. Consequuntur velit inventore aliquid rerum. Temporibus unde ex explicabo. Perspiciatis delectus eveniet laudantium ipsam molestiae fuga culpa, id commodi sint fugiat facere nemo veniam dolor praesentium. Numquam, dolores ducimus. </p> <p> Voluptate voluptates ut incidunt omnis? Voluptatem nam veniam aliquid natus aperiam ullam, consectetur tempora. Laboriosam dolores consequatur beatae repudiandae impedit sapiente officiis et doloremque ipsum, tempora aliquam commodi exercitationem omnis asperiores sequi debitis? Architecto velit optio consequatur illum dolores ipsam omnis laborum nihil! Aliquid sequi vero eveniet molestiae a, facere aut nisi? Temporibus suscipit consequuntur beatae dignissimos ullam aliquid iste quidem inventore rem autem exercitationem, quasi consequatur fugit eligendi voluptas reiciendis praesentium velit sapiente? Eum veniam facilis ducimus impedit nam natus fuga, id neque dolore esse praesentium et qui saepe sequi. Consequatur qui blanditiis expedita deserunt repudiandae assumenda repellat non eum natus. Adipisci repudiandae fuga placeat consequatur quia, saepe, neque maxime, repellat ea quam maiores.</p>'
+
+            ])
+
+            
+
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
                     <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto text-gray-700 sm:h-20">
@@ -94,7 +104,7 @@
 
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline">Forge</a>, <a href="https://vapor.laravel.com" class="underline">Vapor</a>, <a href="https://nova.laravel.com" class="underline">Nova</a>, and <a href="https://envoyer.io" class="underline">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline">Telescope</a>, and more.
+                                    Laravel's robust library of second-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline">Forge</a>, <a href="https://vapor.laravel.com" class="underline">Vapor</a>, <a href="https://nova.laravel.com" class="underline">Nova</a>, and <a href="https://envoyer.io" class="underline">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline">Telescope</a>, and more.
                                 </div>
                             </div>
                         </div>

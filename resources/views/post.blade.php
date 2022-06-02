@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('container')
-<h1>Halaman Post</h1>
+<h1>Halaman Post </h1>
 
 <div class="row g-5">
     <div class="col-md-8">
@@ -10,10 +10,10 @@
       </h3>
       <article class="blog-post">
         
-        <h2 class="blog-post-title">{{ $data["title"] }}</a></h2>
-        <p class="blog-post-meta">June 6, 2022 by <a href="#">{{ $data["author"] }}</a></p>
+        <h2 class="blog-post-title">{{ $data->title }}</a></h2>
+        <p class="blog-post-meta">June 6, 2022 by <a href="#">{{ $data->id }}</a></p>
 
-        <p>{{ $data["post"] }}</p>
+        {!! $data->body !!}
         <hr>
 
 

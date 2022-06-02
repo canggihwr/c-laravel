@@ -1,22 +1,19 @@
 @extends('layouts.main')
 
 @section('container')
-<h1>Halaman Blog</h1>
-
+<h1>Halaman Blog Posts</h1>
+<hr>
 <div class="row g-5">
     <div class="col-md-8">
-      <h3 class="pb-4 mb-4 fst-italic border-bottom">
-        Posts
-      </h3>
-      @foreach ($data as $datas)
+      @foreach ($data as $post)
           
       
       <article class="blog-post">
         
-        <h2 class="blog-post-title"><a href="{{ $datas["slug"] }}">{{ $datas["title"] }}</a></h2>
-        <p class="blog-post-meta">June 6, 2022 by <a href="#">{{ $datas["author"] }}</a></p>
+        <h2 class="blog-post-title"><a href="blog/{{ $post->slug }}">{{ $post->title }}</a></h2>
+        <p class="blog-post-meta">June 6, 2022 by <a href="#">{{ $post->id }}</a></p>
 
-        <p>{{ $datas["post"] }}</p>
+        <p>{{ $post->excerpt }}</p>
         <hr>
 
       @endforeach
