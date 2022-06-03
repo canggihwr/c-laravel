@@ -11,7 +11,7 @@
       <article class="blog-post">
         
         <h2 class="blog-post-title">{{ $data->title }}</a></h2>
-        <p class="blog-post-meta">June 6, 2022 by <a href="#">{{ $data->id }}</a></p>
+        <p class="blog-post-meta">by <b>calice</b> in <a href="/categories/{{ $data->category->slug }}">{{ $data->category->name }}</a></p>
 
         {!! $data->body !!}
         <hr>
