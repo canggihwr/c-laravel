@@ -10,10 +10,10 @@
       
       <article class="blog-post">
         
-        <h2 class="blog-post-title"><a href="blog/{{ $post->slug }}" class="text-decoration-none">{{ $post->title }}</a></h2>
-        <p class="blog-post-meta">by <b><a href="/users/{{ $post->user->name }}" class="text-decoration-none">{{ $post->user->name }}</a></b> in <a href="categories/{{ $post->category->slug }}"class="text-decoration-none">{{ $post->category->name }}</a></p>
+        <h2 class="blog-post-title"><a href="/blog/{{ $post->slug }}" class="text-decoration-none">{{ $post->title }}</a></h2>
+        <p class="blog-post-meta">by <a href="/author/{{ $post->user->username }}" class="text-decoration-none">{{ $post->user->name }}</a> in <a href="/categories/{{ $post->category->slug }}"class="text-decoration-none">{{ $post->category->name }}</a></p>
 
-        <p>{{ $post->excerpt }} <a href="blog/{{ $post->slug }}" class="text-decoration-none"> Read more...</a></p>
+        <p>{{ $post->excerpt }} <a href="/blog/{{ $post->slug }}" class="text-decoration-none"> Read more...</a></p>
         <hr>
 
       @endforeach
