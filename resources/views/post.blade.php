@@ -11,7 +11,7 @@
       <article class="blog-post">
         
         <h2 class="blog-post-title">{{ $data->title }}</a></h2>
-        <p class="blog-post-meta">by <b>calice</b> in <a href="/categories/{{ $data->category->slug }}">{{ $data->category->name }}</a></p>
+        <p class="blog-post-meta">by <b><a href="/users/{{ $data->user->name }}" class="text-decoration-none">{{ $data->user->name }}</a> </b> <a href="/categories/{{ $data->category->slug }}" class="text-decoration-none">{{ $data->category->name }}</a></p>
 
         {!! $data->body !!}
         <hr>

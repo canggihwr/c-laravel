@@ -3,17 +3,17 @@
 @section('container')
 <h1>Halaman Blog Posts</h1>
 <hr>
-<div class="row g-5">
-    <div class="col-md-8">
+<div class="">
+    <div class="">
       @foreach ($data as $post)
           
       
       <article class="blog-post">
         
-        <h2 class="blog-post-title"><a href="blog/{{ $post->slug }}">{{ $post->title }}</a></h2>
-        <p class="blog-post-meta">by <b>calice</b> in <a href="categories/{{ $post->category->slug }}">{{ $post->category->name }}</a></p>
+        <h2 class="blog-post-title"><a href="blog/{{ $post->slug }}" class="text-decoration-none">{{ $post->title }}</a></h2>
+        <p class="blog-post-meta">by <b><a href="/users/{{ $post->user->name }}" class="text-decoration-none">{{ $post->user->name }}</a></b> in <a href="categories/{{ $post->category->slug }}"class="text-decoration-none">{{ $post->category->name }}</a></p>
 
-        <p>{{ $post->excerpt }}</p>
+        <p>{{ $post->excerpt }} <a href="blog/{{ $post->slug }}" class="text-decoration-none"> Read more...</a></p>
         <hr>
 
       @endforeach
