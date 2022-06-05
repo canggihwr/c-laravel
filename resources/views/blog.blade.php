@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('container')
-<h1>Halaman Blog Posts</h1>
+<h1>{{ $title }}</h1>
 <hr>
 <div class="">
     <div class="">
