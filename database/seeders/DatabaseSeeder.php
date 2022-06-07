@@ -52,7 +52,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
-        Post::factory(28)->create();
+        Post::factory(50)->create();
 
 
         // Post::create([
