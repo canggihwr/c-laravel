@@ -3,6 +3,14 @@
 @section('container')
 <h1>{{ $title }}</h1>
 <hr>
+
+<form action="/blog" method="get">
+<div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Search..." name="search" value="{{ request('search') }}">
+  <button class="btn btn-danger" type="submit">Search</button>
+</div>
+</form>
+
 <div class="row mr-3">
   @foreach ($data as $post)
   <div class="card col-md-4 mb-3 ">
@@ -17,6 +25,9 @@
   </div>
 
       @endforeach
+
+      <div class="d-flex justify-content-end">{{ $data->links() }}</div>
+      
 
 
       <nav class="blog-pagination" aria-label="Pagination">
