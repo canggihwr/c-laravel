@@ -14,8 +14,11 @@
 <div class="row mr-3">
   @foreach ($data as $post)
   <div class="card col-md-4 mb-3 ">
-    
-    <img src="{{ asset('anime.jpg') }}" class="card-img-top" alt="anime">
+    @if ($post->image)
+        <img src="{{ asset('storage/'.$post->image) }}" class="card-img-top" alt="anime"> 
+        @else
+        <img src="{{ asset('anime.jpg') }}" class="card-img-top" alt="anime">
+        @endif
     <div class="card-body">
       <h5 class="card-title"><a href="/blog/{{ $post->slug }}" class="text-decoration-none"> {{ $post->title }} </a> </h5>
       <small class="card-text">by <a href="/author/{{ $post->user->username }}" class="text-decoration-none">{{ $post->user->name }}</a> in <a href="/categories/{{ $post->category->slug }}"class="text-decoration-none">{{ $post->category->name }}</a> <small class="text-muted">{{ $post->created_at->diffForHumans() }}</small></small>

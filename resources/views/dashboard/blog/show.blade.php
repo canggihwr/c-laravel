@@ -7,7 +7,11 @@
         Posts
       </h3>
       <article class="blog-post">
-    <img src="{{ asset('anime.jpg') }}" class="card-img-top" alt="anime">
+        @if ($data->image)
+        <img src="{{ asset('storage/'.$data->image) }}" class="card-img-top" alt="anime"> 
+        @else
+        <img src="{{ asset('anime.jpg') }}" class="card-img-top" alt="anime">
+        @endif
 
         
         <h2 class="blog-post-title">{{ $data->title }}</a></h2>

@@ -7,7 +7,7 @@
         Create Post
       </h3>
 
-      <form method="POST" action="/dashboard/blog">
+      <form method="POST" action="/dashboard/blog" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
           <label for="title">Title</label>
@@ -36,6 +36,15 @@
             @endforeach
             
           </select>
+        </div>
+        <div class="mb-3">
+          <label for="image" class="form-label">Image</label>
+          <input class="form-control @error('image') is-invalid @enderror" name="image" type="file" id="image">
+          @error('image') 
+        <div class="invalid-feedback">
+          {{ $message }}
+        </div>
+        @enderror
         </div>
         <div class="form-group">
             <label for="body">Isi Post</label>
