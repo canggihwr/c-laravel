@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class DashboardPostController extends Controller
 {
@@ -123,9 +124,14 @@ class DashboardPostController extends Controller
     {
         $data = $request->validate([
             'title' => 'required',
+            'image' => 'image',
             'category_id' => 'required',
             'body' => 'required'
         ]);
+
+        if ($request->file('image')) {
+            $data['image'] = $request->file('image')->store('post-img', 'public');
+        }
 
         Post::where('id', $post->id)->update($data);
         return redirect('/dashboard/blog')->with('success', 'Post updated!');
@@ -145,12 +151,18 @@ class DashboardPostController extends Controller
      */
     public function destroy(Post $post)
     {
+        if ($post->image) {
+            Storage::delete($post->image);
+        }
         Post::destroy($post->id);
         return redirect('/dashboard/blog')->with('success', 'Post deleted!');
     }
 
     public function destroy2(Post $post)
     {
+        if ($post->image) {
+            Storage::delete($post->image);
+        }
         Post::destroy($post->id);
         return redirect('/dashboard/blog')->with('success', 'Post deleted!');
     }

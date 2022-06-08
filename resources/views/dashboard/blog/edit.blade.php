@@ -7,7 +7,7 @@
         Edit Post
       </h3>
 
-      <form method="POST" action="/dashboard/blog/update/{{ $data->slug }}">
+      <form method="POST" action="/dashboard/blog/update/{{ $data->slug }}" enctype="multipart/form-data">
         
         @csrf
         <div class="form-group">
@@ -43,6 +43,21 @@
             @endforeach
             
           </select>
+        </div>
+        <div class="mb-3">
+          <label for="image" class="form-label">Image</label>
+          @if ($data->image)
+          <img src="{{ asset('storage/'.$data->image) }}" class="img-preview img-fluid d-block mb-3" alt="">
+          @else
+          <img src="" class="img-preview img-fluid d-block mb-3" alt="">
+              
+          @endif
+          <input class="form-control @error('image') is-invalid @enderror" name="image" type="file" id="image" onchange="previewImage()">
+          @error('image') 
+        <div class="invalid-feedback">
+          {{ $message }}
+        </div>
+        @enderror
         </div>
         <div class="form-group">
             <label for="body">Isi Post</label>
