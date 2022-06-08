@@ -3,6 +3,14 @@
 @section('dcontainer')
 
     <h1 class="h2">Post by, {{ auth()->user()->name }}</h1>
+    
+    @if(session()->has('success'))
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      {{ session('success') }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
+    
     <a href="/dashboard/create" class="btn btn-info"><span data-feather="add">Create Post</span></a>
     <div class="table-responsive col-lg-8">
         <table class="table table-striped table-sm">
