@@ -78,17 +78,18 @@ class DashboardPostController extends Controller
      */
     public function show(Post $post)
     {
-        return $post;
+        return view('dashboard.blog.show', [
+            "data" => $post
+        ]);
         
     }
+
     public function show2(Post $post)
     {
         // return $post;
         return view('dashboard.blog.show', [
             "data" => $post
         ]);
-        
-        
     }
     
 
@@ -100,7 +101,10 @@ class DashboardPostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        return view('dashboard.blog.edit', [
+            'data' => $post,
+            'categories' => Category::all()
+        ]);
     }
 
     /**
@@ -112,7 +116,20 @@ class DashboardPostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        $data = $request->validate([
+            'title' => 'required',
+            'category_id' => 'required',
+            'body' => 'required'
+        ]);
+
+        Post::where('id', $post->id)->update($data);
+        return redirect('/dashboard/blog')->with('success', 'Post updated!');
+
+
+        // if ($request->slug != $post->slug) {
+        //     # code...
+        // }
+
     }
 
     /**
@@ -123,6 +140,13 @@ class DashboardPostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        Post::destroy($post->id);
+        return redirect('/dashboard/blog')->with('success', 'Post deleted!');
+    }
+
+    public function destroy2(Post $post)
+    {
+        Post::destroy($post->id);
+        return redirect('/dashboard/blog')->with('success', 'Post deleted!');
     }
 }

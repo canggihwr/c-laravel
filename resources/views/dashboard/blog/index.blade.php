@@ -31,8 +31,13 @@
               <td>{{ $post->category->name }}</td>
               <td>
                   <a href="/dashboard/blog/{{ $post->slug }}" class="badge bg-info"><span data-feather="eye"></span></a>
-                  <a href="/dashboard/blog/{{ $post->slug }}" class="badge bg-warning"><span data-feather="edit"></span></a>
-                  <a href="/dashboard/blog/{{ $post->id }}" class="badge bg-danger"><span data-feather="x-circle"></span></a>
+                  <a href="/dashboard/blog/edit/{{ $post->slug }}" class="badge bg-warning"><span data-feather="edit"></span></a>
+                  <form action="/dashboard/blog/{{ $post->id }}" method="POST" class="d-inline">
+                    @method('delete')
+                    @csrf
+                  <a href="/dashboard/blog/delete/{{ $post->id }}" class="badge bg-danger" onclick="return confirm('Are you sure about that?')"><span data-feather="x-circle"></span></a>
+                  </form>
+                  
                 </td>
             </tr>
             @endforeach

@@ -19,9 +19,13 @@
 
       <nav class="blog-pagination" aria-label="Pagination">
         <a class="btn btn-outline-primary" href="/dashboard/blog">Back to My Post</a>
-        <a href="/dashboard/blog/{{ $data->slug }}" class="btn btn-info"><span data-feather="eye">wiew</span></a>
-                  <a href="/dashboard/blog/{{ $data->slug }}" class="btn btn-warning"><span data-feather="edit"></span>Edit</a>
-                  <a href="/dashboard/blog/{{ $data->id }}" class="btn btn-danger"><span data-feather="x-circle"></span>Delete</a>
+        <a href="/dashboard/blog/edit/{{ $data->slug }}" class="badge bg-warning"><span data-feather="edit"></span>Edit</a>
+                  <form action="" class="d-inline">
+                    @method('delete')
+                    @csrf
+                    <a href="/dashboard/blog/delete/{{ $data->id }}" class="badge bg-danger" onclick="return confirm('Are you sure about that?')"><span data-feather="x-circle"></span>Delete</a>
+
+                  </form>
       </nav>
 
 
