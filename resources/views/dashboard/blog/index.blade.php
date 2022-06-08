@@ -3,6 +3,7 @@
 @section('dcontainer')
 
     <h1 class="h2">Post by, {{ auth()->user()->name }}</h1>
+    <a href="/dashboard/create" class="btn btn-info"><span data-feather="add">Create Post</span></a>
     <div class="table-responsive col-lg-8">
         <table class="table table-striped table-sm">
           <thead>

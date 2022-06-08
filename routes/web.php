@@ -70,8 +70,16 @@ Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/dashboard', function() {
     return view('/dashboard/index');
 })->middleware('auth');
+
 Route::get('/dashboard/blog/{post:slug}', [DashboardPostController::class, 'show2']);
 
+Route::get('/dashboard/create', function() {
+    return view('dashboard.blog.create', [
+        'categories' => Category::all()
+    ]);
+});
+
 Route::resource('/dashboard/blog', DashboardPostController::class)->middleware('auth');
+
 
 
