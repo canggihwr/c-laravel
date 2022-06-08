@@ -55,16 +55,18 @@ class DashboardPostController extends Controller
         $data = $request->validate([
             'title' => 'required',
             'slug' => 'required|unique:posts',
-            'category' => 'required',
+            'category_id' => 'required',
             'body' => 'required'
         ]);
 
         $data['user_id'] = auth()->user()->id;
         $data['excerpt'] = Str::limit($request->body, 100, '...');
         
-        // return $data;
         Post::create($data);
         return redirect('/dashboard/blog')->with('success', 'Post added Successfully!');
+
+        // return $request;
+
     }
 
 

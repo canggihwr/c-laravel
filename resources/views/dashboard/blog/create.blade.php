@@ -7,7 +7,7 @@
         Create Post
       </h3>
 
-      <form method="POST" action="/dashboard/create">
+      <form method="POST" action="/dashboard/blog">
         @csrf
         <div class="form-group">
           <label for="title">Title</label>
@@ -30,7 +30,7 @@
         </div>
         <div class="form-group">
           <label for="category">Category</label>
-          <select class="form-control " name="category_id">
+          <select class="form-control" name="category_id">
             @foreach ($categories as $c)
             <option value="{{ $c->id }}">{{ $c->name }}</option>
             @endforeach
